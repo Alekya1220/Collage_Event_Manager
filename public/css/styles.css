@@ -1,0 +1,437 @@
+/* =====================================================
+                    GLOBAL STYLES
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+}
+
+
+/* ==================================================
+                    LOGIN PAGE
+===================================================== */
+
+
+/* ------------------------------
+   Login Page Animated Background
+------------------------------ */
+
+.login-body{
+
+    min-height:100vh;
+
+    background:linear-gradient(
+        -45deg,
+        #2563eb,
+        #4f46e5,
+        #7c3aed,
+        #0ea5e9
+    );
+
+    background-size:400% 400%;
+
+    animation:gradientBG 12s ease infinite;
+
+    overflow-x:hidden;
+
+    overflow-y:auto;
+
+    position:relative;
+}
+
+/* Background Animation */
+
+@keyframes gradientBG{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+
+/* ------------------------------
+   Login Page Floating Effects
+------------------------------ */
+
+.login-body::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+    height:350px;
+
+    background:rgba(255,255,255,0.15);
+
+    border-radius:50%;
+
+    top:-120px;
+    left:-100px;
+
+    filter:blur(80px);
+}
+
+.login-body::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    background:rgba(255,255,255,0.12);
+
+    border-radius:50%;
+
+    bottom:-120px;
+    right:-100px;
+
+    filter:blur(80px);
+}
+
+
+/* ------------------------------
+   Login Page Left Hero Section
+------------------------------ */
+
+.hero-section{
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:60px;
+}
+
+.hero-content{
+
+    max-width:600px;
+}
+
+.hero-content h1{
+
+    font-size:4rem;
+
+    font-weight:700;
+
+    line-height:1.2;
+
+    margin-bottom:20px;
+}
+
+.hero-content p{
+
+    font-size:1.2rem;
+
+    opacity:0.9;
+
+    margin-bottom:25px;
+}
+
+
+/* ------------------------------
+   Login Page Badge
+------------------------------ */
+
+.badge{
+
+    padding:10px 20px;
+
+    font-size:14px;
+
+    border-radius:50px;
+}
+
+
+/* ------------------------------
+   Login Page Features List
+------------------------------ */
+
+.feature-list{
+
+    margin-top:30px;
+}
+
+.feature-item{
+
+    background:rgba(255,255,255,0.15);
+
+    backdrop-filter:blur(10px);
+
+    border:1px solid rgba(255,255,255,0.2);
+
+    padding:15px 20px;
+
+    border-radius:15px;
+
+    margin-bottom:15px;
+
+    transition:0.3s ease;
+
+    font-size:18px;
+}
+
+.feature-item:hover{
+
+    transform:translateX(8px);
+
+    background:rgba(255,255,255,0.22);
+}
+
+.feature-item i{
+
+    color:#ffd43b;
+
+    margin-right:10px;
+}
+
+
+/* ------------------------------
+   Login Page Card
+------------------------------ */
+
+.login-card{
+
+    width:100%;
+
+    max-width:500px;
+
+    background:rgba(255,255,255,0.18);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,0.25);
+
+    border-radius:25px;
+
+    padding:40px;
+
+    color:white;
+
+    box-shadow:
+    0 8px 32px rgba(0,0,0,0.2);
+}
+
+
+/* ------------------------------
+   Login Page Logo
+------------------------------ */
+
+.logo-icon{
+
+    font-size:75px;
+
+    color:#ffd43b;
+
+    filter:drop-shadow(
+        0 0 10px rgba(255,212,59,0.5)
+    );
+}
+
+
+/* ------------------------------
+   Login Form Styling
+------------------------------ */
+
+.form-label{
+
+    font-weight:500;
+}
+
+.form-control{
+
+    height:50px;
+
+    border:none;
+}
+
+.form-control:focus{
+
+    box-shadow:none;
+}
+
+.input-group{
+
+    overflow:hidden;
+
+    border-radius:10px;
+}
+
+.input-group-text{
+
+    background:white;
+
+    border:none;
+}
+
+
+/* ------------------------------
+   Login Button
+------------------------------ */
+
+.btn-primary{
+
+    background:#2563eb;
+
+    border:none;
+
+    border-radius:10px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    transition:0.3s;
+}
+
+.btn-primary:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-2px);
+}
+
+
+/* ------------------------------
+   Password Show / Hide Button
+------------------------------ */
+
+.password-toggle{
+
+    background:white !important;
+
+    border:none !important;
+
+    border-left:1px solid #dee2e6 !important;
+
+    transition:all 0.3s ease;
+}
+
+.password-toggle i{
+
+    color:#6c757d;
+
+    font-size:20px;
+
+    transition:all 0.3s ease;
+}
+
+.password-toggle:hover{
+
+    background:#f8f9fa !important;
+}
+
+.password-toggle:hover i{
+
+    color:#0d6efd;
+
+    transform:scale(1.15);
+}
+
+.password-toggle:focus{
+
+    box-shadow:none !important;
+}
+
+
+/* ------------------------------
+   Login Links
+------------------------------ */
+
+a{
+
+    text-decoration:none;
+}
+
+a:hover{
+
+    text-decoration:underline;
+}
+
+
+
+/* =====================================================
+                REGISTRATION PAGE
+===================================================== */
+
+/*
+Registration Page uses same styles as Login Page
+
+Uses:
+- login-body
+- hero-section
+- hero-content
+- feature-list
+- login-card
+- form-control
+- password-toggle
+
+No additional CSS used.
+*/
+
+
+
+/* =====================================================
+                    DASHBOARD PAGE
+===================================================== */
+
+
+/* ------------------------------
+   Dashboard Statistic Cards
+------------------------------ */
+
+.dashboard-card{
+
+    transition:0.3s ease;
+}
+
+.dashboard-card:hover{
+
+    transform:translateY(-8px);
+}
+
+.dashboard-card h3{
+
+    margin-top:10px;
+
+    font-weight:700;
+}
+
+
+
+/* =====================================================
+                 RESPONSIVE DESIGN
+===================================================== */
+
+@media(max-width:992px){
+
+    .login-card{
+
+        margin:20px;
+    }
+
+    .hero-content h1{
+
+        font-size:2.5rem;
+    }
+}
