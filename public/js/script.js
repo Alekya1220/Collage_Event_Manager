@@ -344,6 +344,265 @@ function handleAddEvent() {
     });
 }
 /* =====================================================
+                LIST EVENTS PAGE
+===================================================== */
+
+function loadEvents() {
+
+    const tableBody =
+        document.getElementById("eventTableBody");
+
+    if (!tableBody) return;
+
+    const events =
+        JSON.parse(localStorage.getItem("events")) || [];
+
+    tableBody.innerHTML = "";
+
+    events.forEach((event, index) => {
+
+        tableBody.innerHTML += `
+
+        <tr>
+
+            <td>${event.name}</td>
+
+            <td>${event.category}</td>
+
+            <td>${event.date}</td>
+
+            <td>${event.venue}</td>
+
+            <td>
+
+                <span class="badge bg-success">
+                    ${event.status}
+                </span>
+
+            </td>
+
+            <td>
+
+                <button
+                    class="btn btn-info btn-sm action-btn"
+                    onclick="viewEvent(${index})">
+
+                    <i class="bi bi-eye"></i>
+
+                </button>
+
+                <button
+                    class="btn btn-warning btn-sm action-btn"
+                    onclick="editEvent(${index})">
+
+                    <i class="bi bi-pencil"></i>
+
+                </button>
+
+                <button
+                    class="btn btn-danger btn-sm"
+                    onclick="deleteEvent(${index})">
+
+                    <i class="bi bi-trash"></i>
+
+                </button>
+
+            </td>
+
+        </tr>
+        `;
+    });
+}
+
+
+/* Delete Event */
+
+function deleteEvent(index) {
+
+    const events =
+        JSON.parse(localStorage.getItem("events")) || [];
+
+    if(confirm("Delete this event?")){
+
+        events.splice(index,1);
+
+        localStorage.setItem(
+            "events",
+            JSON.stringify(events)
+        );
+
+        loadEvents();
+    }
+}
+
+
+/* View Event */
+
+function viewEvent(index){
+
+    localStorage.setItem(
+        "selectedEvent",
+        index
+    );
+
+    window.location.href = "view.html";
+}
+
+
+/* Edit Event */
+
+function editEvent(index){
+
+    localStorage.setItem(
+        "selectedEvent",
+        index
+    );
+
+    window.location.href = "edit.html";
+}
+
+/* =====================================================
+                    VIEW EVENT PAGE
+===================================================== */
+
+function loadEventDetails() {
+
+    const eventName =
+        document.getElementById("viewName");
+
+    if (!eventName) return;
+
+    const index =
+        localStorage.getItem("selectedEvent");
+
+    const events =
+        JSON.parse(localStorage.getItem("events")) || [];
+
+    const event =
+        events[index];
+
+    if (!event) return;
+
+    document.getElementById("viewName").textContent =
+        event.name;
+
+    document.getElementById("viewCategory").textContent =
+        event.category;
+
+    document.getElementById("viewDate").textContent =
+        event.date;
+
+    document.getElementById("viewTime").textContent =
+        event.time;
+
+    document.getElementById("viewVenue").textContent =
+        event.venue;
+
+    document.getElementById("viewOrganizer").textContent =
+        event.organizer;
+
+    document.getElementById("viewDescription").textContent =
+        event.description;
+
+    document.getElementById("viewStatus").textContent =
+        event.status;
+}
+
+/* =====================================================
+                    EDIT EVENT PAGE
+===================================================== */
+
+function loadEditEvent() {
+
+    const form =
+        document.getElementById("editEventForm");
+
+    if (!form) return;
+
+    const index =
+        localStorage.getItem("selectedEvent");
+
+    const events =
+        JSON.parse(localStorage.getItem("events")) || [];
+
+    const event =
+        events[index];
+
+    if (!event) return;
+
+    document.getElementById("editName").value =
+        event.name;
+
+    document.getElementById("editCategory").value =
+        event.category;
+
+    document.getElementById("editDate").value =
+        event.date;
+
+    document.getElementById("editTime").value =
+        event.time;
+
+    document.getElementById("editVenue").value =
+        event.venue;
+
+    document.getElementById("editOrganizer").value =
+        event.organizer;
+
+    document.getElementById("editDescription").value =
+        event.description;
+
+    document.getElementById("editStatus").value =
+        event.status;
+
+
+    form.addEventListener("submit", function (e) {
+
+        e.preventDefault();
+
+        events[index] = {
+
+            ...event,
+
+            name:
+                document.getElementById("editName").value,
+
+            category:
+                document.getElementById("editCategory").value,
+
+            date:
+                document.getElementById("editDate").value,
+
+            time:
+                document.getElementById("editTime").value,
+
+            venue:
+                document.getElementById("editVenue").value,
+
+            organizer:
+                document.getElementById("editOrganizer").value,
+
+            description:
+                document.getElementById("editDescription").value,
+
+            status:
+                document.getElementById("editStatus").value
+        };
+
+        localStorage.setItem(
+            "events",
+            JSON.stringify(events)
+        );
+
+        alert("Event Updated Successfully!");
+
+        window.location.href =
+            "list.html";
+
+    });
+}
+
+
+/* =====================================================
                     PAGE LOAD
 ===================================================== */
 
@@ -363,10 +622,21 @@ document.addEventListener("DOMContentLoaded", function () {
     if (document.getElementById("userName")) {
         loadDashboard();
     }
-    //Add Event Page
+    // Add Event Page
     if (document.getElementById("addEventForm")) {
     handleAddEvent();
-}
-
+    }
+    // List Events Page
+    if(document.getElementById("eventTableBody")){
+        loadEvents();
+    }
+    // View Event Page
+    if(document.getElementById("viewName")){
+        loadEventDetails();
+    }
+    // Edit Event Page
+    if(document.getElementById("editEventForm")){
+        loadEditEvent();
+    }
 });
 

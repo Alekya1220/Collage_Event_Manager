@@ -464,3 +464,24 @@ No additional CSS used.
 
     box-shadow:0 0 0 0.2rem rgba(13,110,253,.25);
 }
+
+/* =====================================================
+                LIST EVENTS PAGE
+===================================================== */
+
+.table td,
+.table th{
+    vertical-align:middle;
+}
+
+.action-btn{
+    margin-right:5px;
+}
+/* =====================================================
+                    VIEW EVENT PAGE
+===================================================== */
+/* No additional CSS used. The page uses the same styles as the dashboard and list events pages. */
+/* =====================================================
+                    EDIT EVENT PAGE
+===================================================== */
+/* No additional CSS used. The page uses the same styles as the dashboard and list events pages. */
