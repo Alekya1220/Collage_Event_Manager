@@ -285,6 +285,65 @@ function loadDashboard() {
     });
 }
 /* =====================================================
+                    ADD EVENT PAGE
+===================================================== */
+function handleAddEvent() {
+
+    const form =
+        document.getElementById("addEventForm");
+
+    if (!form) return;
+
+    form.addEventListener("submit", function (e) {
+
+        e.preventDefault();
+
+        const event = {
+
+            id: Date.now(),
+
+            name:
+                document.getElementById("eventName").value,
+
+            category:
+                document.getElementById("eventCategory").value,
+
+            date:
+                document.getElementById("eventDate").value,
+
+            time:
+                document.getElementById("eventTime").value,
+
+            venue:
+                document.getElementById("eventVenue").value,
+
+            organizer:
+                document.getElementById("eventOrganizer").value,
+
+            description:
+                document.getElementById("eventDescription").value,
+
+            status:
+                document.getElementById("eventStatus").value
+        };
+
+        const events =
+            JSON.parse(localStorage.getItem("events")) || [];
+
+        events.push(event);
+
+        localStorage.setItem(
+            "events",
+            JSON.stringify(events)
+        );
+
+        alert("Event Added Successfully!");
+
+        window.location.href = "list.html";
+
+    });
+}
+/* =====================================================
                     PAGE LOAD
 ===================================================== */
 
@@ -304,6 +363,10 @@ document.addEventListener("DOMContentLoaded", function () {
     if (document.getElementById("userName")) {
         loadDashboard();
     }
+    //Add Event Page
+    if (document.getElementById("addEventForm")) {
+    handleAddEvent();
+}
 
 });
 
