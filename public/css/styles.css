@@ -466,22 +466,127 @@ No additional CSS used.
 }
 
 /* =====================================================
-                LIST EVENTS PAGE
-===================================================== */
-
-.table td,
-.table th{
-    vertical-align:middle;
-}
-
-.action-btn{
-    margin-right:5px;
-}
-/* =====================================================
                     VIEW EVENT PAGE
 ===================================================== */
-/* No additional CSS used. The page uses the same styles as the dashboard and list events pages. */
+
+.view-box{
+
+    background:#ffffff;
+
+    border:2px solid #e9ecef;
+
+    border-radius:10px;
+
+    padding:12px 15px;
+
+    min-height:50px;
+
+    font-size:16px;
+
+    color:#212529;
+
+    box-shadow:0 2px 8px rgba(0,0,0,0.05);
+
+    transition:all 0.3s ease;
+}
+
+.view-box:hover{
+
+    border-color:#0d6efd;
+
+    transform:translateY(-2px);
+}
+
+.view-description{
+
+    background:#ffffff;
+
+    border:2px solid #e9ecef;
+
+    border-radius:10px;
+
+    padding:15px;
+
+    min-height:120px;
+
+    box-shadow:0 2px 8px rgba(0,0,0,0.05);
+}
+
+.view-label{
+
+    font-weight:600;
+
+    margin-bottom:8px;
+
+    color:#495057;
+}
 /* =====================================================
                     EDIT EVENT PAGE
 ===================================================== */
-/* No additional CSS used. The page uses the same styles as the dashboard and list events pages. */
+
+#editEventForm .form-control,
+#editEventForm .form-select{
+
+    background:#ffffff;
+
+    border:2px solid #dee2e6;
+
+    border-radius:10px;
+
+    padding:12px 15px;
+
+    height:50px;
+
+    transition:all 0.3s ease;
+}
+
+#editEventForm textarea{
+
+    min-height:120px;
+
+    resize:vertical;
+}
+
+#editEventForm .form-control:focus,
+#editEventForm .form-select:focus{
+
+    border-color:#ffc107;
+
+    box-shadow:0 0 0 0.2rem rgba(255,193,7,0.25);
+
+    outline:none;
+}
+
+#editEventForm label{
+
+    font-weight:600;
+
+    color:#212529;
+
+    margin-bottom:8px;
+}
+
+#editEventForm .btn-warning{
+
+    padding:10px 25px;
+
+    font-weight:600;
+
+    border-radius:10px;
+
+    transition:all 0.3s ease;
+}
+
+#editEventForm .btn-warning:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 5px 15px rgba(255,193,7,0.4);
+}
+
+.card-header.bg-warning{
+
+    color:#212529;
+
+    font-weight:700;
+}
