@@ -375,8 +375,16 @@ function loadEvents() {
 
             <td>
 
-                <span class="badge bg-success">
+                <span class="${
+                    event.status === "Upcoming"
+                        ? "status-upcoming"
+                        : event.status === "Completed"
+                        ? "status-completed"
+                        : "status-cancelled"
+                    }">
+
                     ${event.status}
+
                 </span>
 
             </td>
@@ -384,7 +392,7 @@ function loadEvents() {
             <td>
 
                 <button
-                    class="btn btn-info btn-sm action-btn"
+                    class="action-btn view-btn"
                     onclick="viewEvent(${index})">
 
                     <i class="bi bi-eye"></i>
@@ -392,7 +400,7 @@ function loadEvents() {
                 </button>
 
                 <button
-                    class="btn btn-warning btn-sm action-btn"
+                    class="action-btn edit-btn"
                     onclick="editEvent(${index})">
 
                     <i class="bi bi-pencil"></i>
@@ -400,7 +408,7 @@ function loadEvents() {
                 </button>
 
                 <button
-                    class="btn btn-danger btn-sm"
+                    class="action-btn delete-btn"
                     onclick="deleteEvent(${index})">
 
                     <i class="bi bi-trash"></i>

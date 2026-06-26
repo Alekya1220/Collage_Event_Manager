@@ -590,3 +590,307 @@ No additional CSS used.
 
     font-weight:700;
 }
+
+/* =====================================================
+                LIST EVENTS PAGE
+===================================================== */
+
+/* ---------- Statistics Cards ---------- */
+
+.dashboard-card{
+
+    border-radius:15px;
+
+    transition:all 0.3s ease;
+
+    cursor:pointer;
+}
+
+.dashboard-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 12px 25px rgba(0,0,0,0.15);
+}
+
+.dashboard-card i{
+
+    margin-bottom:15px;
+}
+
+.dashboard-card h3{
+
+    font-weight:700;
+
+    margin-bottom:5px;
+}
+
+.dashboard-card p{
+
+    color:#6c757d;
+
+    font-weight:500;
+}
+
+
+/* ---------- Search Bar ---------- */
+
+#searchEvent{
+
+    height:50px;
+
+    border:2px solid #dee2e6;
+
+    border-left:none;
+
+    border-radius:0 12px 12px 0;
+
+    font-size:15px;
+
+    box-shadow:none;
+}
+
+#searchEvent:focus{
+
+    border-color:#0d6efd;
+
+    box-shadow:none;
+}
+
+#searchEvent + *{
+
+    border-left:none;
+}
+
+/* Search Icon */
+
+.event-search .input-group-text{
+
+    width:50px;
+
+    height:50px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#ffffff;
+
+    border:2px solid #dee2e6;
+
+    border-right:none;
+
+    border-radius:12px 0 0 12px;
+}
+
+.event-search .input-group{
+
+    align-items:stretch;
+}
+
+/* ---------- Table ---------- */
+
+.event-table{
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+
+    margin-bottom:0;
+}
+
+.event-table thead{
+
+    background:#212529;
+
+    color:#ffffff;
+}
+
+.event-table thead th{
+
+    border:none;
+
+    padding:16px;
+
+    font-size:15px;
+}
+
+.event-table tbody td{
+
+    padding:16px;
+
+    vertical-align:middle;
+
+    border-bottom:1px solid #e9ecef;
+}
+
+.event-table tbody tr{
+
+    transition:.3s;
+}
+
+.event-table tbody tr:hover{
+
+    background:#f5f9ff;
+
+    transform:scale(1.005);
+}
+
+
+/* ---------- Status Badges ---------- */
+
+.status-upcoming{
+
+    background:#0d6efd;
+
+    color:white;
+
+    padding:8px 18px;
+
+    border-radius:25px;
+
+    font-size:13px;
+
+    font-weight:600;
+}
+
+.status-completed{
+
+    background:#198754;
+
+    color:white;
+
+    padding:8px 18px;
+
+    border-radius:25px;
+
+    font-size:13px;
+
+    font-weight:600;
+}
+
+.status-cancelled{
+
+    background:#dc3545;
+
+    color:white;
+
+    padding:8px 18px;
+
+    border-radius:25px;
+
+    font-size:13px;
+
+    font-weight:600;
+}
+
+
+/* ---------- Action Buttons ---------- */
+
+.action-btn{
+
+    width:40px;
+
+    height:40px;
+
+    border-radius:50%;
+
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border:none;
+
+    margin-right:6px;
+
+    transition:.3s;
+}
+
+.action-btn:hover{
+
+    transform:translateY(-3px) scale(1.1);
+
+    box-shadow:0 8px 18px rgba(0,0,0,.25);
+}
+
+.view-btn{
+
+    background:#0dcaf0;
+
+    color:white;
+}
+
+.edit-btn{
+
+    background:#ffc107;
+
+    color:#212529;
+}
+
+.delete-btn{
+
+    background:#dc3545;
+
+    color:white;
+}
+
+
+/* ---------- Card ---------- */
+
+.card{
+
+    border-radius:18px;
+}
+
+.card-header{
+
+    padding:18px 25px;
+
+    font-weight:600;
+}
+
+
+/* ---------- Empty Table ---------- */
+
+.empty-table{
+
+    text-align:center;
+
+    padding:40px;
+
+    color:#6c757d;
+
+    font-size:18px;
+}
+
+
+/* ---------- Responsive ---------- */
+
+@media(max-width:768px){
+
+    .dashboard-card{
+
+        margin-bottom:20px;
+    }
+
+    .search-input{
+
+        font-size:14px;
+    }
+
+    .event-table th,
+
+    .event-table td{
+
+        font-size:14px;
+
+        padding:12px;
+    }
+
+}
